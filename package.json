@@ -18,5 +18,9 @@
   "homepage": "https://github.com/ironpup/materialize-react#readme",
   "devDependencies": {
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
