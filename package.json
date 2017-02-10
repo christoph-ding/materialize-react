@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ironpup/materialize-react/issues"
   },
-  "homepage": "https://github.com/ironpup/materialize-react#readme"
+  "homepage": "https://github.com/ironpup/materialize-react#readme",
+  "dependencies": {
+    "materialize": "^1.0.0"
+  }
 }
