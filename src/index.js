@@ -1,10 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class TestApp extends React.Component{
   render() {
     return (
-      <h1 className="header center teal-text text-lighten-2"> Heya </h1>
+      <MuiThemeProvider>
+        <RaisedButton label="click me"/>
+      </MuiThemeProvider>
     )
   }
 }
