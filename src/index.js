@@ -7,6 +7,7 @@ injectTapEventPlugin();
 // MUI components
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
+import AutoComplete from 'material-ui/AutoComplete';
 
 class TestApp extends React.Component{
   render() {
@@ -14,6 +15,7 @@ class TestApp extends React.Component{
       <div>
         <Button />
         <NavBar />
+        <AutoCompleteForm />
       </div>
     )
   }
@@ -48,6 +50,27 @@ class NavBar extends React.Component{
         onClick={this.handleClick}
         />
       </MuiThemeProvider>
+    )
+  }
+}
+
+class AutoCompleteForm extends React.Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: ['cat', 'dog', 'wolf', 'bird', 'fish', 'tiger']
+    }
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>      
+        <AutoComplete 
+        dataSource={this.state.data}
+        hintText="Autocomplete"
+        />
+      </MuiThemeProvider>      
     )
   }
 }
