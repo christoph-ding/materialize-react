@@ -6,14 +6,14 @@ injectTapEventPlugin();
 
 // MUI components
 import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar';
 
 class TestApp extends React.Component{
   render() {
     return (
       <div>
-      <MuiThemeProvider>
         <Button />
-      </MuiThemeProvider>        
+        <NavBar />
       </div>
     )
   }
@@ -22,7 +22,32 @@ class TestApp extends React.Component{
 class Button extends React.Component{
   render() {
     return (
+      <MuiThemeProvider>
         <RaisedButton label="Raised Button"/>
+      </MuiThemeProvider>
+    )
+  }
+}
+
+class NavBar extends React.Component{
+  handleClick() {
+    console.log('hello!');
+  }
+
+  styles() {
+    return {
+      cursor: 'pointer'
+    }
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>
+        <AppBar 
+        title={<span style={this.styles()}>Title</span>}
+        onClick={this.handleClick}
+        />
+      </MuiThemeProvider>
     )
   }
 }
