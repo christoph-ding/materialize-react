@@ -10,6 +10,7 @@ import AppBar from 'material-ui/AppBar';
 import AutoComplete from 'material-ui/AutoComplete';
 import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import FlatButton from 'material-ui/FlatButton';
 
 class TestApp extends React.Component{
   render() {
@@ -19,6 +20,7 @@ class TestApp extends React.Component{
         <NavBar />
         <AutoCompleteForm />
         <ExampleBadge />
+        <ExampleComplexButton />
       </div>
     )
   }
@@ -86,6 +88,24 @@ class ExampleBadge extends React.Component{
               <NotificationsIcon />
         </Badge>
       </MuiThemeProvider>
+    )
+  }
+}
+
+class ExampleComplexButton extends React.Component{
+  constructor(props) {
+    super(props)
+
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>      
+        <FlatButton
+        label="Hover"
+        hoverColor="#8AA62F"
+        />
+      </MuiThemeProvider>      
     )
   }
 }
