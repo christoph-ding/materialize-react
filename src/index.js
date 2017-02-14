@@ -11,6 +11,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 
 class TestApp extends React.Component{
   render() {
@@ -21,6 +22,7 @@ class TestApp extends React.Component{
         <AutoCompleteForm />
         <ExampleBadge />
         <ExampleComplexButton />
+        <ExpandingCard />
       </div>
     )
   }
@@ -100,11 +102,33 @@ class ExampleComplexButton extends React.Component{
 
   render() {
     return (
-      <MuiThemeProvider>      
+      <MuiThemeProvider>
         <FlatButton
         label="Hover"
         hoverColor="#8AA62F"
         />
+      </MuiThemeProvider>
+    )
+  }
+}
+
+class ExpandingCard extends React.Component{
+  render() {
+    return (
+      <MuiThemeProvider>    
+      <Card>
+        <CardHeader 
+        title="Click Me!"
+        actAsExpander={true}
+        showExpandableButton={true}
+        />
+      <CardText expandable={true}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+        Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+        Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+      </CardText>
+      </Card>
       </MuiThemeProvider>      
     )
   }
