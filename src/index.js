@@ -8,6 +8,8 @@ injectTapEventPlugin();
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import AutoComplete from 'material-ui/AutoComplete';
+import Badge from 'material-ui/Badge';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 
 class TestApp extends React.Component{
   render() {
@@ -16,6 +18,7 @@ class TestApp extends React.Component{
         <Button />
         <NavBar />
         <AutoCompleteForm />
+        <ExampleBadge />
       </div>
     )
   }
@@ -65,12 +68,24 @@ class AutoCompleteForm extends React.Component{
 
   render() {
     return (
-      <MuiThemeProvider>      
-        <AutoComplete 
+      <MuiThemeProvider>
+        <AutoComplete
         dataSource={this.state.data}
         hintText="Autocomplete"
         />
-      </MuiThemeProvider>      
+      </MuiThemeProvider>
+    )
+  }
+}
+
+class ExampleBadge extends React.Component{
+  render() {
+    return (
+      <MuiThemeProvider>
+        <Badge badgeContent={'4'}>
+              <NotificationsIcon />
+        </Badge>
+      </MuiThemeProvider>
     )
   }
 }
