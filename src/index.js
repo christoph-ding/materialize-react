@@ -17,6 +17,8 @@ import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import Drawer from 'material-ui/Drawer';
+import {List, ListItem} from 'material-ui/List';
+
 
 class TestApp extends React.Component{
   render() {
@@ -31,6 +33,7 @@ class TestApp extends React.Component{
         <SimpleDialog />
         <PaperNotebook />
         <DockedDrawer />
+        <SimpleList />
       </div>
     )
   }
@@ -237,6 +240,20 @@ class DockedDrawer extends React.Component{
         </Drawer>
         </MuiThemeProvider>
       </div>
+    )
+  }
+}
+
+class SimpleList extends React.Component{
+  render() {
+    return (
+      <MuiThemeProvider>
+      <List>
+        <ListItem primaryText="List Item One" />
+        <ListItem primaryText="List Item Two" />
+        <ListItem primaryText="List Item Three" />
+      </List>
+      </MuiThemeProvider>
     )
   }
 }
