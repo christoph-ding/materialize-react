@@ -16,6 +16,7 @@ import Dialog from 'material-ui/Dialog';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
+import Drawer from 'material-ui/Drawer';
 
 class TestApp extends React.Component{
   render() {
@@ -29,6 +30,7 @@ class TestApp extends React.Component{
         <ExpandingCard />
         <SimpleDialog />
         <PaperNotebook />
+        <DockedDrawer />
       </div>
     )
   }
@@ -206,6 +208,33 @@ class PaperNotebook extends React.Component{
           <TextField hintText="Write something" underlineShow={false}/>
           <Divider />
         </Paper>
+        </MuiThemeProvider>
+      </div>
+    )
+  }
+}
+
+class DockedDrawer extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+
+  handleToggle() {
+    this.setState({open: !this.state.open});
+  }
+
+  render() {
+    return (
+      <div>
+        <MuiThemeProvider>
+        <RaisedButton label="Dock / Undock" onTouchTap={this.handleToggle.bind(this)}/>
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+        <Drawer open={this.state.open} openSecondary={true}>
+        </Drawer>
         </MuiThemeProvider>
       </div>
     )
