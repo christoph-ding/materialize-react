@@ -14,6 +14,8 @@ import FlatButton from 'material-ui/FlatButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
+import TextField from 'material-ui/TextField';
 
 class TestApp extends React.Component{
   render() {
@@ -190,24 +192,22 @@ class SimpleDialog extends React.Component{
 }
 
 class PaperNotebook extends React.Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      style: {
-        height: 100,
-        width: 100,
-        margin: 20,
-        textAlign: 'center',
-        display: 'inline-block'
-      }
-    }    
-  }
-
   render() {
     return (
-      <MuiThemeProvider>      
-      <Paper style={this.state.style} />
-      </MuiThemeProvider>
+      <div>
+        <MuiThemeProvider>
+        <Paper zDepth={4}>
+          <TextField hintText="Write something" underlineShow={false}/>
+          <Divider />
+          <TextField hintText="Write something" underlineShow={false}/>
+          <Divider />
+          <TextField hintText="Write something" underlineShow={false}/>
+          <Divider />
+          <TextField hintText="Write something" underlineShow={false}/>
+          <Divider />
+        </Paper>
+        </MuiThemeProvider>
+      </div>
     )
   }
 }

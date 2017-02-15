@@ -14304,6 +14304,14 @@ var _Paper = __webpack_require__(59);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
+var _Divider = __webpack_require__(284);
+
+var _Divider2 = _interopRequireDefault(_Divider);
+
+var _TextField = __webpack_require__(308);
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -14602,30 +14610,34 @@ var SimpleDialog = function (_React$Component8) {
 var PaperNotebook = function (_React$Component9) {
   _inherits(PaperNotebook, _React$Component9);
 
-  function PaperNotebook(props) {
+  function PaperNotebook() {
     _classCallCheck(this, PaperNotebook);
 
-    var _this9 = _possibleConstructorReturn(this, (PaperNotebook.__proto__ || Object.getPrototypeOf(PaperNotebook)).call(this, props));
-
-    _this9.state = {
-      style: {
-        height: 100,
-        width: 100,
-        margin: 20,
-        textAlign: 'center',
-        display: 'inline-block'
-      }
-    };
-    return _this9;
+    return _possibleConstructorReturn(this, (PaperNotebook.__proto__ || Object.getPrototypeOf(PaperNotebook)).apply(this, arguments));
   }
 
   _createClass(PaperNotebook, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _MuiThemeProvider2.default,
+        'div',
         null,
-        _react2.default.createElement(_Paper2.default, { style: this.state.style })
+        _react2.default.createElement(
+          _MuiThemeProvider2.default,
+          null,
+          _react2.default.createElement(
+            _Paper2.default,
+            { zDepth: 4 },
+            _react2.default.createElement(_TextField2.default, { hintText: 'Write something', underlineShow: false }),
+            _react2.default.createElement(_Divider2.default, null),
+            _react2.default.createElement(_TextField2.default, { hintText: 'Write something', underlineShow: false }),
+            _react2.default.createElement(_Divider2.default, null),
+            _react2.default.createElement(_TextField2.default, { hintText: 'Write something', underlineShow: false }),
+            _react2.default.createElement(_Divider2.default, null),
+            _react2.default.createElement(_TextField2.default, { hintText: 'Write something', underlineShow: false }),
+            _react2.default.createElement(_Divider2.default, null)
+          )
+        )
       );
     }
   }]);
