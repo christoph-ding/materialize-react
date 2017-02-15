@@ -12,6 +12,7 @@ import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import FlatButton from 'material-ui/FlatButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import Dialog from 'material-ui/Dialog';
 
 class TestApp extends React.Component{
   render() {
@@ -23,6 +24,7 @@ class TestApp extends React.Component{
         <ExampleBadge />
         <ExampleComplexButton />
         <ExpandingCard />
+        <SimpleDialog />
       </div>
     )
   }
@@ -97,7 +99,6 @@ class ExampleBadge extends React.Component{
 class ExampleComplexButton extends React.Component{
   constructor(props) {
     super(props)
-
   }
 
   render() {
@@ -115,9 +116,9 @@ class ExampleComplexButton extends React.Component{
 class ExpandingCard extends React.Component{
   render() {
     return (
-      <MuiThemeProvider>    
+      <MuiThemeProvider>
       <Card>
-        <CardHeader 
+        <CardHeader
         title="Click Me!"
         actAsExpander={true}
         showExpandableButton={true}
@@ -130,6 +131,45 @@ class ExpandingCard extends React.Component{
       </CardText>
       </Card>
       </MuiThemeProvider>      
+    )
+  }
+}
+
+class SimpleDialog extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+
+  handleOpen() {
+    this.setState({open: true});
+  }
+
+  handleClose() {
+    this.setState({open: false});
+  }
+
+  render() {
+
+
+    return (
+      <div>
+        <MuiThemeProvider>
+        <RaisedButton label="Open a dialog" onTouchTap={this.handleOpen.bind(this)}/>
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+        <Dialog
+          title="Hello!  I am a dialog!"
+          open={this.state.open}
+          autoScrollBodyContent = {false}
+          onRequestClose={this.handleClose.bind(this)}
+        >
+          Click outside to close
+        </Dialog>
+        </MuiThemeProvider>
+      </div>
     )
   }
 }
