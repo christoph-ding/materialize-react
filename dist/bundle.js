@@ -14553,6 +14553,16 @@ var SimpleDialog = function (_React$Component8) {
   }, {
     key: 'render',
     value: function render() {
+      var actions = [_react2.default.createElement(_FlatButton2.default, {
+        label: 'Cancel',
+        primary: true,
+        onTouchTap: this.handleClose.bind(this)
+      }), _react2.default.createElement(_FlatButton2.default, {
+        label: 'Submit',
+        primary: true,
+        keyboardFocused: true,
+        onTouchTap: this.handleClose.bind(this)
+      })];
 
       return _react2.default.createElement(
         'div',
@@ -14569,6 +14579,7 @@ var SimpleDialog = function (_React$Component8) {
             _Dialog2.default,
             {
               title: 'Hello!  I am a dialog!',
+              actions: actions,
               open: this.state.open,
               autoScrollBodyContent: false,
               onRequestClose: this.handleClose.bind(this)

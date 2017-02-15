@@ -152,7 +152,19 @@ class SimpleDialog extends React.Component{
   }
 
   render() {
-
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose.bind(this)}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose.bind(this)}
+      />,
+    ];
 
     return (
       <div>
@@ -162,6 +174,7 @@ class SimpleDialog extends React.Component{
         <MuiThemeProvider>
         <Dialog
           title="Hello!  I am a dialog!"
+          actions={actions}
           open={this.state.open}
           autoScrollBodyContent = {false}
           onRequestClose={this.handleClose.bind(this)}
