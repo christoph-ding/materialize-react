@@ -13,6 +13,7 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import FlatButton from 'material-ui/FlatButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
+import Paper from 'material-ui/Paper';
 
 class TestApp extends React.Component{
   render() {
@@ -25,6 +26,7 @@ class TestApp extends React.Component{
         <ExampleComplexButton />
         <ExpandingCard />
         <SimpleDialog />
+        <PaperNotebook />
       </div>
     )
   }
@@ -183,6 +185,29 @@ class SimpleDialog extends React.Component{
         </Dialog>
         </MuiThemeProvider>
       </div>
+    )
+  }
+}
+
+class PaperNotebook extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      style: {
+        height: 100,
+        width: 100,
+        margin: 20,
+        textAlign: 'center',
+        display: 'inline-block'
+      }
+    }    
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>      
+      <Paper style={this.state.style} />
+      </MuiThemeProvider>
     )
   }
 }

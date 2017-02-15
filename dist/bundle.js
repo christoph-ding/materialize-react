@@ -14300,6 +14300,10 @@ var _Dialog = __webpack_require__(439);
 
 var _Dialog2 = _interopRequireDefault(_Dialog);
 
+var _Paper = __webpack_require__(59);
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -14333,7 +14337,8 @@ var TestApp = function (_React$Component) {
         _react2.default.createElement(ExampleBadge, null),
         _react2.default.createElement(ExampleComplexButton, null),
         _react2.default.createElement(ExpandingCard, null),
-        _react2.default.createElement(SimpleDialog, null)
+        _react2.default.createElement(SimpleDialog, null),
+        _react2.default.createElement(PaperNotebook, null)
       );
     }
   }]);
@@ -14592,6 +14597,40 @@ var SimpleDialog = function (_React$Component8) {
   }]);
 
   return SimpleDialog;
+}(_react2.default.Component);
+
+var PaperNotebook = function (_React$Component9) {
+  _inherits(PaperNotebook, _React$Component9);
+
+  function PaperNotebook(props) {
+    _classCallCheck(this, PaperNotebook);
+
+    var _this9 = _possibleConstructorReturn(this, (PaperNotebook.__proto__ || Object.getPrototypeOf(PaperNotebook)).call(this, props));
+
+    _this9.state = {
+      style: {
+        height: 100,
+        width: 100,
+        margin: 20,
+        textAlign: 'center',
+        display: 'inline-block'
+      }
+    };
+    return _this9;
+  }
+
+  _createClass(PaperNotebook, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _MuiThemeProvider2.default,
+        null,
+        _react2.default.createElement(_Paper2.default, { style: this.state.style })
+      );
+    }
+  }]);
+
+  return PaperNotebook;
 }(_react2.default.Component);
 
 (0, _reactDom.render)(_react2.default.createElement(TestApp, null), document.getElementById('mount-point'));
