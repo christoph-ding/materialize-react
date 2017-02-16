@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -18,8 +19,18 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import Drawer from 'material-ui/Drawer';
 import {List, ListItem} from 'material-ui/List';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import {cyan500} from 'material-ui/styles/colors';
 
+// MUI Themes
+const testMuiTheme = getMuiTheme({
+  MenuItem: {
+    textColor: cyan500,
+  }
+})
 
+//
 class TestApp extends React.Component{
   render() {
     return (
@@ -34,6 +45,7 @@ class TestApp extends React.Component{
         <PaperNotebook />
         <DockedDrawer />
         <SimpleList />
+        <MenuWithHotkeys />
       </div>
     )
   }
@@ -254,6 +266,35 @@ class SimpleList extends React.Component{
         <ListItem primaryText="List Item Three" />
       </List>
       </MuiThemeProvider>
+    )
+  }
+}
+
+class MenuWithHotkeys extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      paperStyle: {
+        display: 'inline-block'
+      }
+
+    }
+  }
+
+
+  render() {
+    return (
+      <div>
+      <MuiThemeProvider muiTheme={testMuiTheme}>      
+      <Paper zDepth={2} style={this.state.paperStyle}>
+      <Menu width={528}>
+        <MenuItem primaryText="Bold" secondaryText="&#8984;B" />
+        <MenuItem primaryText="Italic" secondaryText="&#8984;I" />
+        <MenuItem primaryText="Underline" secondaryText="&#8984;U" />        
+      </Menu>
+      </Paper>
+      </MuiThemeProvider>
+      </div>
     )
   }
 }
